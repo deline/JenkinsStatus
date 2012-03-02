@@ -16,6 +16,12 @@
 
   <dependencies>
 
+      <dependency>
+          <groupId>org.codehaus.jackson</groupId>
+          <artifactId>jackson-mapper-asl</artifactId>
+          <version>1.9.3</version>
+      </dependency>
+
        <!-- Test dependencies -->
       <dependency>
           <groupId>org.easymock</groupId>
