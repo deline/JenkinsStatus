@@ -1,5 +1,7 @@
 package com.delineneo.processor;
 
+import org.codehaus.jackson.map.ObjectMapper;
+
 /**
  * Created by IntelliJ IDEA.
  * User: deline
@@ -8,4 +10,13 @@ package com.delineneo.processor;
  * To change this template use File | Settings | File Templates.
  */
 public class JenkinsStatusProcessor {
+    private ObjectMapper objectMapper;
+
+    public void process() {
+
+    }
+
+    public void setObjectMapper(ObjectMapper objectMapper) {
+        this.objectMapper = objectMapper;
+    }
 }

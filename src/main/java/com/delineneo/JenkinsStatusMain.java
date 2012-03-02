@@ -9,6 +9,6 @@ package com.delineneo;
  */
 public class JenkinsStatusMain {
     public static void main(String[] args) {
-
+        // Initialise Spring context
     }
 }
