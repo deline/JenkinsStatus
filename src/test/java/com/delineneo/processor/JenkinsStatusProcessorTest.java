@@ -2,6 +2,7 @@ package com.delineneo.processor;
 
 import org.easymock.EasyMockSupport;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.web.client.RestTemplate;
 
@@ -47,7 +48,7 @@ public class JenkinsStatusProcessorTest extends EasyMockSupport {
         verifyAll();
     }
 
-    //    @Test
+    @Ignore
     public void passingBuildShouldSendMessageToTurnLedOff() {
         fail("Test not yet implemented");
     }
