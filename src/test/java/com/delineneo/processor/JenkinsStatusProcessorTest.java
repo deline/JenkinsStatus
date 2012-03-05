@@ -3,10 +3,9 @@ package com.delineneo.processor;
 import com.delineneo.communication.SerialCommunicator;
 import org.easymock.EasyMockSupport;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.web.client.RestTemplate;
-
-import java.io.IOException;
 
 import static org.easymock.EasyMock.expect;
 import static org.junit.Assert.fail;
@@ -74,6 +73,7 @@ public class JenkinsStatusProcessorTest extends EasyMockSupport {
     }
     
     @Test
+    @Ignore
     public void unignoreAndCheckInThisTestToCauseBuildFailure() {
         fail("Failing test should cause arduino LED to light up...");
     }
