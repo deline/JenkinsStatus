@@ -75,6 +75,6 @@ public class JenkinsStatusProcessorTest extends EasyMockSupport {
     @Test
 //    @Ignore
     public void unignoreAndCheckInThisTestToCauseBuildFailure() {
-        fail("Failing test should cause arduino LED to light up...");
+        fail("Failing test should cause arduino LED to light up....");
     }
 }
