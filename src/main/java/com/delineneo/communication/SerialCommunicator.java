@@ -5,6 +5,7 @@ import gnu.io.SerialPort;
 import gnu.io.SerialPortEvent;
 import gnu.io.SerialPortEventListener;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -18,7 +19,7 @@ import java.util.Enumeration;
  */
 @Component
 public class SerialCommunicator implements SerialPortEventListener {
-    SerialPort serialPort;
+    private SerialPort serialPort;
     /** The port we're normally going to use. */
     private static final String PORT_NAMES[] = {
             "/dev/tty.usbmodem471", // Mac OS X
@@ -34,7 +35,7 @@ public class SerialCommunicator implements SerialPortEventListener {
     /** Default bits per second for COM port. */
     private static final int DATA_RATE = 9600;
 
-    public void SerialCommunicator() {
+    public SerialCommunicator() {
         System.out.println(">>>>>>>>>>>> initialising SerialCommunicator");
 
         CommPortIdentifier portId = null;
@@ -113,7 +114,7 @@ public class SerialCommunicator implements SerialPortEventListener {
         // Ignore all the other eventTypes, but you should consider the other ones.
     }
 
-    public void send(char c) throws IOException {
+    public synchronized void send(char c) throws IOException {
         output.write(c);
     }
 }

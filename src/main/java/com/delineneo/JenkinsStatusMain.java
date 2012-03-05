@@ -18,16 +18,6 @@ public class JenkinsStatusMain {
     }
 
     public static void main(String[] args) throws Exception {
-        ShutDownHook hook = new ShutDownHook();
-        Runtime runtime = Runtime.getRuntime();
-        runtime.addShutdownHook(hook);
-
         JenkinsStatusMain jenkinsStatusMain = new JenkinsStatusMain();
-    }
-
-    static class ShutDownHook extends Thread {
-        public void run() {
-            System.out.println("Shutting down application...");
-        }
     }
 }
