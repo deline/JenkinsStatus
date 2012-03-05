@@ -56,7 +56,7 @@ public class JenkinsStatusProcessorTest extends EasyMockSupport {
     @Test
     public void failingBuildShouldSendMessageToTurnLedOn() throws Exception {
         expect(restTemplate.getForObject(JENKINS_URL, String.class)).andReturn(FAILING_BUILD_JSON);
-        serialCommunicator.send('1');
+        serialCommunicator.send('0');
         
         replayAll();
         jenkinsStatusProcessor.process();
@@ -66,10 +66,15 @@ public class JenkinsStatusProcessorTest extends EasyMockSupport {
     @Test
     public void passingBuildShouldSendMessageToTurnLedOff() throws Exception {
         expect(restTemplate.getForObject(JENKINS_URL, String.class)).andReturn(PASSING_BUILD_JSON);
-        serialCommunicator.send('0');
+        serialCommunicator.send('1');
 
         replayAll();
         jenkinsStatusProcessor.process();
         verifyAll();
+    }
+    
+    @Test
+    public void unignoreAndCheckInThisTestToCauseBuildFailure() {
+        fail("Failing test should cause arduino LED to light up...");
     }
 }
