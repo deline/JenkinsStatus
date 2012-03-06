@@ -11,18 +11,16 @@ import java.io.IOException;
 import static org.apache.commons.lang.StringUtils.contains;
 
 /**
- * Created by IntelliJ IDEA.
  * User: deline
  * Date: 2/03/12
  * Time: 8:33 PM
- * To change this template use File | Settings | File Templates.
  */
 @Component
 public class JenkinsStatusProcessor {
     private static final String JENKINS_URL = "http://localhost:8080/job/JenkinsStatus/api/json" ;
     private static final String SUCCESS_BUILD_COLOR = "blue";
-    public static final char BUILD_FAIL = '0';
-    public static final char BUILD_SUCCESS = '1';
+    private static final char BUILD_FAIL = '0';
+    private static final char BUILD_SUCCESS = '1';
 
     private RestTemplate restTemplate;
     private SerialCommunicator serialCommunicator;
